@@ -55,6 +55,12 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+    
+    .logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
 
         .nav-links {
             display: flex;
@@ -86,7 +92,18 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.1), rgba(236, 72, 153, 0.1));
+            background-image: url('wartopia.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(3px);
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(168, 85, 247, 0.3), rgba(59, 130, 246, 0.3));
         }
 
         .glow-1, .glow-2 {
@@ -94,6 +111,7 @@
             border-radius: 50%;
             filter: blur(80px);
             animation: pulse 4s infinite;
+            z-index: 2;
         }
 
         .glow-1 {
@@ -136,6 +154,12 @@
             animation: fadeInUp 0.8s ease;
         }
 
+    .hero-title img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+    
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -149,14 +173,14 @@
 
         .hero-subtitle {
             font-size: 1.5rem;
-            color: #d1d5db;
+            color: #000000;
             margin-bottom: 1rem;
             animation: fadeInUp 0.8s ease 0.2s both;
         }
 
         .hero-description {
             font-size: 1.125rem;
-            color: #9ca3af;
+            color: #000000;
             margin-bottom: 3rem;
             max-width: 700px;
             margin-left: auto;
@@ -285,9 +309,9 @@
             transition: transform 0.3s ease;
         }
 
-         .card-icon img {
-            width: 50px;  /* sesuaikan ukuran */
-            height: 50px;
+        .card-icon img {
+            width: 80px;
+            height: 80px;
             object-fit: contain;
         }
     
@@ -304,6 +328,19 @@
         .card-description {
             color: #9ca3af;
             margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .card-description a {
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .card-description a:hover {
+            color: #ec4899;
+            text-decoration: underline;
         }
 
         .download-btn {
@@ -417,8 +454,8 @@
         }
 
         .community-icon img {
-            width: 50px;  /* sesuaikan ukuran */
-            height: 50px;
+            width: 80px;
+            height: 80px;
             object-fit: contain;
         }
     
@@ -567,7 +604,9 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">War Topia</div>
+            <div class="logo">
+                <img src="warjudul.png">
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#download">Download</a></li>
@@ -583,7 +622,9 @@
         <div class="glow-2"></div>
         
         <div class="hero-content">
-            <h1 class="hero-title">War Topia</h1>
+            <h1 class="hero-title">
+                <img src="warjudul.png">
+            </h1>
             <p class="hero-subtitle">The Best Growtopia Private Server</p>
             <p class="hero-description">
                 Bergabunglah dengan ribuan pemain dalam server private Growtopia terbaik. 
@@ -627,30 +668,50 @@
                         <img src="powertunnel.png" alt="PowerTunnel Icon">
                     </div>
                     <h3 class="card-title">PowerTunnel</h3>
-                    <p class="card-description"><p class="card-description">1. Install PowerTunnel APK<br>
-                                                2. Open Plugin → Hosts → Open the Setting<br>
-                                                3. Type: https://gtpshost.com/raw/WarTopia<br>
-                                                4. Back, Click "CONNECT" button, open Growtopia<br></p></p>
+                    <p class="card-description">
+                        1. Install PowerTunnel APK<br>
+                        2. Open Plugin → Hosts → Open the Setting<br>
+                        3. Type: https://gtpshost.com/raw/WarTopia<br>
+                        4. Back, Click "CONNECT" button, open Growtopia<br>
+                    </p>
                 </div>            
 
                 <!-- Virtual Host Card -->
                 <div class="download-card">
                     <div class="card-icon">
-                        <img src="virtualhost.png">
+                        <img src="virtualhost.png" alt="Virtual Host Icon">
                     </div>
                     <h3 class="card-title">Virtual Host</h3>
-                    <p class="card-description">1. Install Virtual Host APK<br>
-                            2. Download Hosts File <a href="https://www.mediafire.com/file/fkca68toa7h26b9/WarTopia+-+GTPSHOST.txt/file">
-                                         <span>Here</span>
-                                          </a><br>
-                            3. Open SELECT HOSTS FILE<br>
-                            4. Select the downloaded host file<br>
-                                  (WarTopia - GTPSHOST.txt)<br>
-                            5. open Growtopia<br></p>
-                 
+                    <p class="card-description">
+                        1. Install Virtual Host APK<br>
+                        2. Download Hosts File <a href="https://www.mediafire.com/file/fkca68toa7h26b9/WarTopia+-+GTPSHOST.txt/file" target="_blank">Here</a><br>
+                        3. Open SELECT HOSTS FILE<br>
+                        4. Select the downloaded host file<br>
+                        (WarTopia - GTPSHOST.txt)<br>
+                        5. open Growtopia<br>
+                    </p>
                 </div>
+                
+                                <!-- Windows Card -->
+                <div class="download-card">
+                    <div class="card-icon">
+                        <img src="windows.png" alt="Virtual Host Icon">
+                    </div>
+                    <h3 class="card-title">Windows</h3>
+                    <p class="card-description">
+                        1. Press Win+R → paste C:\Windows\System32\drivers\etc<br>
+                        2. Open hosts with Notepad (Admin)<br>
+                        3. Add:<br>
+                              167.71.212.205 www.growtopia1.com<br>
+                              167.71.212.205 www.growtopia2.com<br>
+                        4. Save → launch Growtopia<br>
+                    </p>
+                </div>
+                
             </div>
 
+            
+            
             <div class="warning-box">
                 <div class="warning-content">
                     ⚠️ Pastikan Anda mengikuti tutorial instalasi dengan benar
@@ -677,7 +738,7 @@
                 <!-- Discord Card -->
                 <div class="community-card">
                     <div class="community-icon">
-                        <img src="discord.png">
+                        <img src="discord.png" alt="Discord Icon">
                     </div>
                     <h3 class="community-title">Discord Server</h3>
                     <p class="community-description">
@@ -692,7 +753,7 @@
                 <!-- WhatsApp Card -->
                 <div class="community-card">
                     <div class="community-icon">
-                        <img src="whatsapp.png">
+                        <img src="whatsapp.png" alt="WhatsApp Icon">
                     </div>
                     <h3 class="community-title">WhatsApp Group</h3>
                     <p class="community-description">
